@@ -80,6 +80,27 @@ Die Bit- und Shiftoperatoren `&`, `|`, `^`, `~`, `<<`, `>>` sind wieder identisc
 
 Dasselbe gilt für die Vergleichsoperatoren: `<`, `>`, `<=`, `>=`, `==`, `!=`
 
+
+## Code Blöcke
+
+Für die nächsten Kapitel musst du wissen was in Python ein Code Block ist. Ein Code Block wird in Python durch einrücken der Befehle erreicht.
+
+Ein Block kann aus beliebig vielen Kommandos bestehen. 
+
+Der erste Block muss immer auf der Spalte 1 sein:
+
+```
+if n > 0:
+    print("if-block-command-1")
+    print("if-block-command-2")
+else:
+    print("else-block-command-1")
+    print("else-block-command-2")
+```
+
+Kommandos mit einem `:` am Ende verlangen einen neuen Block zu beginnen. (eine Einrückungstufe höher zu gehen.)
+
+
 ## if – else – elif Konstruktionen
 
 Zu `if` und `else` gibt es wenig zu sagen. Ein else `if` heisst in Micropython `elif`. Hier ein – zugegebenermaßen an sich ziemlich sinnloses – Beispiel:
