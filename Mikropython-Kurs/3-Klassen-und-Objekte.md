@@ -1,30 +1,15 @@
 # Klassen und Objekte
+Eine Klasse fasst Variablen und Funktionen zusammen. Mit den Funktionen wird auf die internen Variablen zugegriffen.
+Diese Variablen werden auch Attribute genannt. Ein Objekt wird aus eine Klasse erzeugt. Es ist möglich beliebig viele Objekte aus einer Klasse zu erzeugen.
 
+Wenn wir jetzt für unser Pong Spiel überlegen welche Klassen da Sinn machen wären das.
 
+- Paddle: der Schieber welche den Ball auffängt
+- Ball: der Ball
+- uns sicher noch einige mehr welche uns im Verlauf des Projekts in den Sinn kommen
 
-## Definition einer Klass
-
-def isIn(firstCorner=(0,0),secondCorner=(0,0),point=(0,0)):
-
-   #assign values to variables
-   x1,y1=firstCorner[0],firstCorner[1]
-   x2,y2=secondCorner[0],secondCorner[1]
-
-   x,y=point[0],point[1]
-   #A point lies inside or not the rectangle
-   #if and only if it’s x-coordinate lies
-   #between the x-coordinate of the given bottom-right
-   #and top-left coordinates of the rectangle
-   #and y-coordinate lies between the y-coordinate of
-   #the given bottom-right and top-left coordinates.
-   if (x >= x1 and x <= x2 and y >= y1 and y <= y2) :
-       return True
-   #alternate case if coordinates are in reverse order
-   elif(x >= x2 and x <= x1 and y >= y2 and y <= y1):
-       return True
-
-   else:
-       return False
+## Definition einer Klasse
+Schauen wir uns mal das Beispiel `Paddle` an:
 
 ```
 class Paddle:
@@ -49,4 +34,10 @@ class Paddle:
         return  x >= self.xpos - self.width/2 and x <= self.xpos + self.width/2 and y >= self.ypos - self.height/2 and y <= self.ypos + self.height/2
 ```
 
- p=Paddle(64,32,0,128,20,30)
+Du siehtst dass eine Klasse im mit dem Schlüsselwort `class` beginnt. Danach kommt die Funktion `__init__`. Dieser Name ist von Python so vorgegeben. Die Funktion wird immer als erstes ausgeführt wenn du ein Objekt aus einer Klasse erzeugst. In der objektorientierten Programmierung wird diese Funktion auch `Constructor` genannt.
+
+Du kannst auch eine Funktion `__del__` definieren. Diese wird immer aufgerufen wenn ein Objekt gelöscht wird. Diese Funktion wird auch `Destructor` genannt.
+
+Bei den Funktionen wird bei der Klassendefinition immer der Wert `self` mitgegeben. Uber `self` kann dann innerhalb der Klasse auf die Klassenattribute zugegriffen werden.
+
+
