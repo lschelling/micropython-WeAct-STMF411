@@ -75,17 +75,16 @@ Im Beispiel fräst du den Eingang A2 vom Board ab. Mit mode=Pin.IN sagst du dem 
 vom Prozessor auf 1 gesetzt wird. Wenn du den Eingang auf GND setzt wir der Wert von `pin.value()` 0 geben.
 
 `
->>> pin = Pin(Pin.cpu.A2,  mode=Pin.IN, pull=Pin.PULL_UP)
->>> pin.value()
-1
+pin = Pin(Pin.cpu.A2,  mode=Pin.IN, pull=Pin.PULL_UP)
+pin.value()
 `
 ### Als Ausgang
 
 Wenn du einen Ausgang setzen willst geht das fast genau gleich.
 
 `
->>> pin = Pin(Pin.cpu.A2,  mode=Pin.OUT)
->>> pin.value(0)
+pin = Pin(Pin.cpu.A2,  mode=Pin.OUT)
+pin.value(0)
 `
 ### Als interrupt
 
