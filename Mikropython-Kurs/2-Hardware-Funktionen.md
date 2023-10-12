@@ -74,18 +74,19 @@ Der Name des Eingangs ist auf dem Board aufgedruckt. Dort muss das Signal, zB Sc
 Im Beispiel fräst du den Eingang A2 vom Board ab. Mit mode=Pin.IN sagst du dem Prozessor dass der A2 als Eingang geschaltet wird, mit pull=Pin.PULL_UP dass er 
 vom Prozessor auf 1 gesetzt wird. Wenn du den Eingang auf GND setzt wir der Wert von `pin.value()` 0 geben.
 
-`
+```
 pin = Pin(Pin.cpu.A2,  mode=Pin.IN, pull=Pin.PULL_UP)
 pin.value()
-`
+```
 ### Als Ausgang
 
 Wenn du einen Ausgang setzen willst geht das fast genau gleich.
 
-`
+```
 pin = Pin(Pin.cpu.A2,  mode=Pin.OUT)
 pin.value(0)
-`
+```
+
 ### Als interrupt
 
 Mit der `Pin.irq()` Finktion kannst du, wie beim Schalter oder Timer, eine lambda Funktion angeben welche aufgerufen wird wenn sich der Ausgang ändert.
