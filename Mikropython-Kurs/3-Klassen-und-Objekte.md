@@ -36,6 +36,8 @@ class Paddle:
 
 Du siehtst dass eine Klasse im mit dem Schlüsselwort `class` beginnt. Danach kommt die Funktion `__init__`. Dieser Name ist von Python so vorgegeben. Die Funktion wird immer als erstes ausgeführt wenn du ein Objekt aus einer Klasse erzeugst. In der objektorientierten Programmierung wird diese Funktion auch `Constructor` genannt.
 
+Dort definierst du auch die Attribute der Klasse. Die Klasse `Paddle`hat in diesem Fall die Attribute `self.xpos`, `self.ypos`, 'self.xmax', 'self.xmin', 'self.witdh' und 'self.height'
+
 Du kannst auch eine Funktion `__del__` definieren. Diese wird immer aufgerufen wenn ein Objekt gelöscht wird. Diese Funktion wird auch `Destructor` genannt.
 
 Alle anderen Funktionen kannst du so benennen wie du benennen wie du willst.
