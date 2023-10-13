@@ -38,6 +38,8 @@ Du siehtst dass eine Klasse im mit dem Schlüsselwort `class` beginnt. Danach ko
 
 Du kannst auch eine Funktion `__del__` definieren. Diese wird immer aufgerufen wenn ein Objekt gelöscht wird. Diese Funktion wird auch `Destructor` genannt.
 
+Alle anderen Funktionen kannst du so benennen wie du benennen wie du willst.
+
 Bei den Funktionen wird bei der Klassendefinition immer der Wert `self` mitgegeben. Uber `self` kann dann innerhalb der Klasse auf die Klassenattribute zugegriffen werden.
 
 
