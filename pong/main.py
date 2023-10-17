@@ -9,9 +9,8 @@ import lib.framebuf2 as framebuf
 from ball import Ball
 
 i2c = machine.I2C(1)
-#i2c.scan()
-
 display = SSD1306_I2C(128,64, i2c)
+
 ball=Ball(64,32,5)
 
 def ontime():

@@ -56,6 +56,5 @@ from paddle import Paddle
 
 p=Paddle(64,32,0,0,32,64,10,5)
 
+p.MoveInc(5)
 ```
-
-
