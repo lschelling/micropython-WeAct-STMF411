@@ -9,7 +9,9 @@ Wenn wir jetzt für unser Pong Spiel überlegen welche Klassen da Sinn machen w�
 - uns sicher noch einige mehr welche uns im Verlauf des Projekts in den Sinn kommen
 
 ## Definition einer Klasse
-Schauen wir uns mal das Beispiel `Paddle` an:
+Schauen wir uns mal das Beispiel `Paddle` an. Dazu schreiben wir ein neues File das `paddle.py` heisst. Dieses hat den folgenden Inhalt:
+
+
 
 ```
 class Paddle:
@@ -43,5 +45,17 @@ Du kannst auch eine Funktion `__del__` definieren. Diese wird immer aufgerufen w
 Alle anderen Funktionen kannst du so benennen wie du benennen wie du willst.
 
 Bei den Funktionen wird bei der Klassendefinition immer der Wert `self` mitgegeben. Uber `self` kann dann innerhalb der Klasse auf die Klassenattribute zugegriffen werden.
+
+
+### Benutzen der Klasse
+
+Um die Klasse zu benutzen muss man das File im `main.py` importieren. Dass machst du mit dem Befehl:
+
+```
+from paddle import Paddle
+
+p=Paddle(64,32,0,0,32,64,10,5)
+
+```
 
 
