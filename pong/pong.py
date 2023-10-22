@@ -25,6 +25,12 @@ class Ball:
 
     def draw(self, fb):
         fb.circle(self.x, self.y, self.r,1, True)
+        
+    def getXPos(self):
+        return self.x
+        
+    def getYPos(self):
+        return self.y
 
         
 class Paddle:
@@ -41,8 +47,13 @@ class Paddle:
     def moveRight(self, inc):
         self.xpos -= inc
 
-    def collision(self, x, y):
-        return  x >= self.xpos - self.width/2 and x <= self.xpos + self.width/2 and y >= self.ypos - self.height/2 and y <= self.ypos + self.height/2
+    def hit(self, x, y):
+        print('X:'+str(x)+' Y:'+str(y))
+        if y>=54:
+            return  x >= self.xpos - self.width/2 and x <= self.xpos + self.width/2
+        else:
+            return True
+    
     def draw (self, fb):
         fb.rect(self.xpos-self.width//2, self.ypos-self.height//2, self.width, self.height, 1, True)
-        
+    
