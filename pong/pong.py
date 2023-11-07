@@ -16,7 +16,10 @@ class Ball:
 
         self.x=self.x+self.speedx
         self.y=self.y+self.speedy
-
+    def locx(self):
+        return self.x
+    def locy(self):
+        return self.y
 
     def debug(self):
         print(self.x)
@@ -25,12 +28,6 @@ class Ball:
 
     def draw(self, fb):
         fb.circle(self.x, self.y, self.r,1, True)
-        
-    def getXPos(self):
-        return self.x
-        
-    def getYPos(self):
-        return self.y
 
         
 class Paddle:
@@ -39,6 +36,8 @@ class Paddle:
         self.ypos = ypos
         self.width = width
         self.height = height
+        self.hits=0
+        self.ground=False
 
     # moves the paddle based on supplied values
     def moveLeft(self, inc):
@@ -46,14 +45,17 @@ class Paddle:
 
     def moveRight(self, inc):
         self.xpos -= inc
-
+ 
     def hit(self, x, y):
-        print('X:'+str(x)+' Y:'+str(y))
-        if y>=54:
-            return  x >= self.xpos - self.width/2 and x <= self.xpos + self.width/2
+        if y > 50:
+            if not self.ground:
+                self.ground=True
+                self.hits=self.hits+1
+            return  x >= self.xpos - self.width/2-5 and x <= self.xpos + self.width/2+5 
         else:
-            return True
+            self.ground=False
+            return True 
     
     def draw (self, fb):
-        fb.rect(self.xpos-self.width//2, self.ypos-self.height//2, self.width, self.height, 1, True)
-    
+        fb.text(str(self.hits),5,5)
+        fb.rect(self.xpos-self.width//2, self.ypos-self.height//2, self.width, self.height, 1, Tru
