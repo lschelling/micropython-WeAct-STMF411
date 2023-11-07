@@ -18,6 +18,4 @@ class pbm:
         return self.y
     
     def getFb(self):
-        return self.frambuffer
-
-
+        return self.framebuffer
