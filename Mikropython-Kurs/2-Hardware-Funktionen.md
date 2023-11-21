@@ -113,3 +113,42 @@ while True:
     sleep(1)
 
 ```
+### Uhr
+
+Der Prozessor hat auch eine Uhr welche die aktuelle Uhrzeit und das Datum  speichert. Die Uhr läuft von selbst im Hintergrund.
+Solange der Prozessor mit Strom versorgt wird läuft die Uhr weiter, auch wenn das Programm beendet wird. Für einen Wecker muss also eine Batterie verbunden werden welche den RTC immer mit Strom versorgt.
+
+Das Uhr Objekt bekommst du mit der RTC() Funktion. (RTC=Real Time Clock)
+
+```
+rtc = machine.RTC()
+```
+
+Zuerst einmal muss die Uhr auf das aktuelle Datum und Zeit gesetzt werden. Das geht über die `datetime` Funktion der alle Werte als Tuple mitgegeben werden
+
+```
+rtc.datetime((2020, 1, 21, 2, 10, 32, 36, 0))
+```
+
+Die Zeit kannst du ebenfalls mit der `datetime()` Funktion lesen. Die Funktion gibt ein Tuple mit allen Werten zurück.
+
+```
+(year, month, day, weekday, hour, minute, second, ms) = rtc.datetime()
+```
+
+oder in eine Tuple Variable
+
+```
+# Datum und Uhrzeit lesen
+datetime = rtc.datetime()
+
+# Ausgabe
+print('Tuple:', datetime)
+print('     Jahr:', datetime[0])
+print('    Monat:', datetime[1])
+print('      Tag:', datetime[2])
+print('Wochentag:', datetime[3])
+print('   Stunde:', datetime[4])
+print('   Minute:', datetime[5])
+print('  Sekunde:', datetime[6])
+```
